@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@300&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 280px auto;
+  color: #3c3c3c;
+}
+
+nav {
+  grid-column: 1;
+  position: fixed;
+  height: 100%;
+  width: 280px;
+  display: grid;
+  grid-template-rows: 150px auto;
+  color: #d3d3d3;
+  background-color: #3c3c3c;
+}
+
+main {
+  grid-column: 2;
+  margin: auto 50px;
+}
+
+.logo {
+  grid-row: 1;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  width: 160px;
+  margin: 10px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+nav ul li {
+  background-color: #434343;
+  padding: 30px auto;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #d3d3d3;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding-top: 50px;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 15px auto;
+}
+
+#install a,
+#the_gitignore_file p a,
+#references p a {
+  text-decoration: none;
+}
+
+#glossary-content li {
+  list-style-type: disc;
+  margin: 10px 20px;
+}
+p {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+code {
+  padding: 3px;
+  margin-top: 25px;
+  font-size: 85%;
+  border-radius: 3px;
+  background-color: rgba(27, 31, 35, 0.05);
+  font-family: "Roboto mono", sans-serif;
+}
+
+blockquote {
+  padding-left: 10px;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+footer {
+  grid-column: 2;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+  background-color: #f05033;
+  text-align: center;
+}
+
+#menu #menu-btn {
+  display: none;
+}
+
+#references {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    grid-template-columns: inherit;
+    grid-template-rows: 50px auto 50px;
+  }
+
+  nav {
+    height: 50px;
+    width: 100%;
+    grid-row: 1;
+  }
+
+  .logo {
+    height: 50px;
+    justify-content: left;
+    margin-left: 5px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logo h1 {
+    width: 250px;
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  main {
+    grid-row: 2;
+    margin: auto 20px;
+  }
+
+  #menu {
+    position: absolute;
+    display: flex;
+    justify-self: flex-end;
+    align-self: center;
+    margin-right: 15px;
+  }
+
+  #menu-list {
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 250px;
+    background-color: #3c3c3c;
+    z-index: 1;
+  }
+
+  #menu #menu-btn {
+    display: block;
+    position: relative;
+  }
+
+  #menu:hover #menu-list {
+    display: block;
+    z-index: 1;
+  }
+
+  footer {
+    grid-row: 3;
+  }
+}

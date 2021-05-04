@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">
+        <img class="git-logo" src="../img/git-logo.svg" alt="git logo" />
+        <header><h1>Git Documentation</h1></header>
+      </div>
+      <div id="menu">
+        <img id="menu-btn" src="../img/menu-btn.svg" alt="menu botton" />
+        <ul id="menu-list">
+          <li><a class="nav-link" href="#what_is_git?">What is Git?</a></li>
+          <li><a class="nav-link" href="#install">Install</a></li>
+          <li>
+            <a class="nav-link" href="#configure_tooling">Configure tooling</a>
+          </li>
+          <li><a class="nav-link" href="#branches">Branches</a></li>
+          <li><a class="nav-link" href="#make_changes">Make changes</a></li>
+          <li><a class="nav-link" href="#redo_commits">Redo commits</a></li>
+          <li>
+            <a class="nav-link" href="#create_repositories"
+              >Create repositories</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#the_gitignore_file"
+              >The gitignore file</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#synchronize_changes"
+              >Synchronize changes</a
+            >
+          </li>
+          <li><a class="nav-link" href="#glossary">Glossary</a></li>
+          <li><a class="nav-link" href="#references">References</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main-doc">
+      <section id="what_is_git?" class="main-section">
+        <header><h2>What is Git?</h2></header>
+        <p>
+          Git is software for tracking changes in any set of files, usually used
+          source code during software development. Its goals include speed, data
+          integrity, and support for distributed, non-linear workflows
+          (thousands of parallel branches running on different systems).
+        </p>
+      </section>
+
+      <section id="install" class="main-section">
+        <header><h2>Install</h2></header>
+        <h3>GitHub Desktop</h3>
+        <a
+          href="https://desktop.github.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          >desktop.github.com</a
+        >
+        <h3>Git for All Platforms</h3>
+        <a href="https://git-scm.com" target="_blank" rel="noreferrer noopener"
+          >git-scm.com</a
+        >
+      </section>
+      <section id="configure_tooling" class="main-section">
+        <header><h2>Configure tooling</h2></header>
+        <p>Configure user information for all local repositories.</p>
+        <code>$ git config --global user.name "[name]"</code>
+        <p>Sets the name you want attached to your commit transactions.</p>
+        <code>$ git config --global user.email "[email address]"</code>
+        <p>Sets the email you want attached to your commit transactions.</p>
+        <code>$ git config --global color.ui auto</code>
+        <p>Enables helpful colorization of command line output.</p>
+      </section>
+
+      <section id="branches" class="main-section">
+        <header><h2>Branches</h2></header>
+        <p>
+          Branches are an important part of working with Git. Any commits you
+          make will be made on the branch you’re currently “checked out” to. Use
+          <code>git status</code> to see which branch that is.
+        </p>
+        <code>$ git branch [branch-name]</code>
+        <p>Creates a new branch.</p>
+        <code>$ git checkout [branch-name]</code>
+        <p>
+          Switches to the specified branch and updates the working directory.
+        </p>
+        <code>$ git merge [branch]</code>
+        <p>
+          Combines the specified branch’s history into the current branch. This
+          is usually done in pull requests, but is an important Git operation.
+        </p>
+        <code>$ git branch -d [branch-name]</code>
+        <p>Deletes the specified branch.</p>
+      </section>
+
+      <section id="make_changes" class="main-section">
+        <header><h2>Make changes</h2></header>
+        <p>Browse and inspect the evolution of project files.</p>
+        <code>$ git log</code>
+        <p>Lists version history for the current branch.</p>
+        <code>$ git log --follow [file]</code>
+        <p>
+          Lists version history for a file, beyond renames (works only for a
+          single file).
+        </p>
+        <code>$ git diff [first-branch]...[second-branch]</code>
+        <p>Shows content differences between two branches.</p>
+        <code>$ git show [commit]</code>
+        <p>Outputs metadata and content changes of the specified commit.</p>
+        <code>$ git add [file]</code>
+        <p>Snapshots the file in preparation for versioning.</p>
+        <code>$ git commit -m "[descriptive message]"</code>
+        <p>Records file snapshots permanently in version history.</p>
+      </section>
+
+      <section id="redo_commits" class="main-section">
+        <header><h2>Redo commits</h2></header>
+        <p>Erase mistakes and craft replacement history.</p>
+        <code>$ git reset [commit]</code>
+        <p>
+          Undoes all commits after <code>[commit]</code>, preserving changes
+          locally
+        </p>
+        <code>$ git reset --hard [commit]</code>
+        <p>Discards all history and changes back to the specified commit.</p>
+        <blockquote>
+          CAUTION! Changing history can have nasty side effects. If you need to
+          change commits that exist on GitHub (the remote), proceed with
+          caution. If you need help, reach out at github.community or contact
+          support.
+        </blockquote>
+      </section>
+
+      <section id="create_repositories" class="main-section">
+        <header><h2>Create repositories</h2></header>
+        <p>
+          A new repository can either be created locally, or an existing
+          repository can be cloned. When a repository was initialized locally,
+          you have to push it to GitHub afterwards.
+        </p>
+        <code>$ git init</code>
+        <p>
+          The git init command turns an existing directory into a new Git
+          repository inside the folder you are running this command. After using
+          the git init command, link the local repository to an empty GitHub
+          repository using the following command:
+        </p>
+        <code>$ git remote add origin [url]</code>
+        <p>
+          Specifies the remote repository for your local repository. The url
+          points to a repository on GitHub.
+        </p>
+        <code>$ git clone [url]</code>
+        <p>
+          Clone (download) a repository that already exists on GitHub, including
+          all of the files, branches, and commits.
+        </p>
+      </section>
+
+      <section id="the_gitignore_file" class="main-section">
+        <header><h2>The gitignore file</h2></header>
+        <p>
+          Sometimes it may be a good idea to exclude files from being tracked
+          with Git. This is typically done in a special file named .gitignore.
+          You can find helpful templates for .gitignore files at
+          <a
+            href="https://github.com/github/gitignore"
+            target="_blank"
+            rel="noreferrer noopener"
+            >github.com/github/gitignore</a
+          >.
+        </p>
+      </section>
+
+      <section id="synchronize_changes" class="main-section">
+        <header><h2>Synchronize changes</h2></header>
+        <p>
+          Synchronize your local repository with the remote repository on
+          GitHub.com
+        </p>
+        <code>$ git fetch</code>
+        <p>Downloads all history from the remote tracking branches.</p>
+        <code>$ git merge</code>
+        <p>Combines remote tracking branches into current local branch.</p>
+        <code>$ git push</code>
+        <p>Uploads all local branch commits to GitHub.</p>
+        <code>$ git pull</code>
+        <p>
+          Updates your current local working branch with all new commits from
+          the corresponding remote branch on GitHub. git pull is a combination
+          of
+          <code>git fetch</code> and <code>git merge</code>.
+        </p>
+      </section>
+
+      <section id="glossary" class="main-section">
+        <header><h2>Glossary</h2></header>
+        <ul id="glossary-content">
+          <li>
+            <strong>GitHub:</strong> a platform for hosting and collaborating on
+            Git repositories.
+          </li>
+          <li>
+            <strong>commit:</strong> a Git object, a snapshot of your entire
+            repository compressed into a SHA.
+          </li>
+          <li>
+            <strong>branch:</strong> a lightweight movable pointer to a commit.
+          </li>
+          <li>
+            <strong>clone:</strong> a local version of a repository, including
+            all commits and branches.
+          </li>
+          <li>
+            <strong>remote:</strong> a common repository on GitHub that all team
+            members use to exchange their changes.
+          </li>
+          <li>
+            <strong>fork:</strong> a copy of a repository on GitHub owned by a
+            different user.
+          </li>
+          <li>
+            <strong>pull request:</strong> a place to compare and discuss the
+            differences introduced on a branch with reviews, comments,
+            integrated tests, and more.
+          </li>
+          <li>
+            <strong>HEAD:</strong> representing your current working directory,
+            the HEAD pointer can be moved to different branches, tags, or
+            commits when using git checkout.
+          </li>
+        </ul>
+      </section>
+
+      <section id="references" class="main-section">
+        <header><h2>References</h2></header>
+        <p>
+          <strong>"What is Git?" </strong> is from: Git. (2021, april). In
+          Wikipedia.
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://es.wikipedia.org/wiki/Git"
+            >https://es.wikipedia.org/wiki/Git</a
+          >.
+        </p>
+        <p>
+          The rest of the information was taken from
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://training.github.com/downloads/github-git-cheat-sheet/"
+            >https://training.github.com/downloads/github-git-cheat-sheet/</a
+          >.
+        </p>
+      </section>
+    </main>
+    <footer>Copyright © 2021. Stephan Calderin. All rights reserved.</footer>
+  </body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
