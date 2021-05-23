@@ -137,6 +137,11 @@ nav ul li {
   list-style: none;
 }
 
+nav ul li:hover {
+  font-weight: 600;
+  transform: translateY(-1px);
+}
+
 #navbar a {
   display: block;
   padding: 10px 30px;
